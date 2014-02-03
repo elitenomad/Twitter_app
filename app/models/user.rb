@@ -30,6 +30,6 @@ class User < ActiveRecord::Base
 	validates :password, length: { minimum: 6 }
 	#validates_presence_of :email
 
-
+	self.per_page = 25
 	has_secure_password
 end

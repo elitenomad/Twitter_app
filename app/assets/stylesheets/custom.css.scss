@@ -46,7 +46,7 @@ h2{
 	letter-spacing: -1px;
 	marigin-bottom: 30px;
 	text-align: normal;
-	color: $grayLight;
+	color: $gray-light;
 }
 
 p{
@@ -74,9 +74,10 @@ p{
 
 footer {
   margin-top: 45px;
+  margin-bottom: 20px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: $grayLight;
+  color: $gray-light;
   a {
   		color: #555;
   		&:hover {
@@ -120,7 +121,7 @@ $grayMediumLight: #eaeaea;
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid $gray-lighter;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -152,10 +153,12 @@ input, textarea, select, .uneditable-input {
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+  font-size: 125%;
 }
 
 input {
-  height: auto !important;
+  height: 40px;
+  border-radius: 5px;
 }
 
 
@@ -181,9 +184,9 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid $gray-lighter;
     &:last-child {
-      border-bottom: 1px solid $grayLighter;
+      border-bottom: 1px solid $gray-lighter;
     }
   }
 }
@@ -204,7 +207,7 @@ input {
   display: block;
 }
 .timestamp {
-  color: $grayLight;
+  color: $gray-light;
 }
 .gravatar {
   float: left;
@@ -216,3 +219,19 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+
+.hero-wrap-inner h1{
+  font-family: verdana;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+

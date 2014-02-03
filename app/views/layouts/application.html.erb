@@ -5,20 +5,23 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="https://about.twitter.com/sites/about/themes/gazebo_about/favicon.ico" type="image/vnd.microsoft.icon">
   <%= render 'layouts/shim' %>
 </head>
 <body>
 
- <%= render 'layouts/header'%>
+  <%= render 'layouts/header'%>
 
-<div class="container">
-	<% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
-      <% end %>
-	<%= yield %>
-	<%= render 'layouts/footer'%>
-	<%= debug(params) if Rails.env.development? %>
-</div>
+
+  <div class="container">
+  	<% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+        <% end %>
+  	<%= yield %>
+
+  	<%= render 'layouts/footer'%>
+  
+  </div>
 
 </body>
 </html>
