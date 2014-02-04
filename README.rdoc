@@ -1,3 +1,23 @@
 == README
 
 Twitter APPLICATION
+
+a) Static Pages
+b) User, Sessions Model and Controller
+c) Login and Authentication
+d) Users and Tweets
+e) Users Following and Followed
+f) Users Hashtags: 
+		User 
+			has_and_belongs_to_many :hashtags
+
+		Hashtag
+			has_and_belongs_to_many :users
+
+		user_id, hashtag_id
+		
+      # content - Find hashtags in the content (Use matcher to get all the hashtags)
+      # Array of hashtag -- Loop through each tag
+            # find hash tag if its  present
+            # else create a new tag
+            # push it to @micropost.hashtags

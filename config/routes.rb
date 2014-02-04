@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
 
+  get '/hashtags/:id/show', to: 'hashtags#show'
   get "relationships/create"
   get "relationships/destroy"
   root 'static_pages#home'
@@ -22,5 +23,5 @@ SampleApp::Application.routes.draw do
   get "help" => "static_pages#help"
   get "signup" => "users#new"
   get "signin" => "sessions#new"
-  get "signout" => "sessions#destroy"
+  delete "signout" => "sessions#destroy"
 end
