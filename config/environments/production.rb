@@ -81,15 +81,15 @@ SampleApp::Application.configure do
   #email configuration
   config.action_mailer.default_url_options = { :host => 'wditwitter.herokuapp.com' }
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_options = {from: 'stalin.pranava@gmail.com'}
+  config.action_mailer.default_options = {from: 'stalin.pranava@sendgrid.net'}
   #config.action_mailer.async = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
+    address:              'smtp.sendgrid.net',
     port:                 587,
-    domain:               'herokuapp.com',
-    user_name:            'stalin.pranava@gmail.com',
-    password:             '!workinIBM',
+    domain:               'heroku.com',
+    user_name:            'stalin.pranava',
+    password:             '!workinIBM4059',
     authentication:       'plain',
     enable_starttls_auto: true 
    }
