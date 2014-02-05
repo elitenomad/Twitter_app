@@ -1,6 +1,7 @@
 SampleApp::Application.routes.draw do
 
-  get '/hashtags/:id/show', to: 'hashtags#show'
+  get '/hashtags/:id/show', to: 'hashtags#show' , as: 'hashtag'
+  get '/hashtags', to: 'hashtags#index'
   get "relationships/create"
   get "relationships/destroy"
   root 'static_pages#home'
@@ -20,6 +21,7 @@ SampleApp::Application.routes.draw do
 
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact"
+  get "sendemail" => "static_pages#sendemail"
   get "help" => "static_pages#help"
   get "signup" => "users#new"
   get "signin" => "sessions#new"

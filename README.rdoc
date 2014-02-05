@@ -21,3 +21,6 @@ f) Users Hashtags:
             # find hash tag if its  present
             # else create a new tag
             # push it to @micropost.hashtags
+
+
+ g) search : start autocompleting from 3 charactors..

@@ -10,6 +10,7 @@ html {
 
 body {
 	padding-top: 60px;
+  font-family: 'Georgia', 'verdana';
 }
 
 section {
@@ -27,6 +28,11 @@ textarea {
 	}
 }
 
+/* contact form */
+
+.contact-form {
+    margin-top:70px;
+}
 
 /* Typography */
 
@@ -170,10 +176,12 @@ input {
   }
 }
 
+/*
 .field_with_errors {
   @extend .control-group;
   @extend .error;
 }
+*/
 
 
 /* Users index */

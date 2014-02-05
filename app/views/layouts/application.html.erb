@@ -14,13 +14,17 @@
 
 
   <div class="container">
+    <div class="row">
   	<% flash.each do |key, value| %>
-          <%= content_tag(:div, value, class: "well text-alert") %>
+          <%= content_tag(:div, value, class: "well text-info") %>
         <% end %>
   	<%= yield %>
+    <% if signed_in? %>
+      <%= render 'layouts/tweetmod' %>
+    <% end %>
     <%= debug(params) if Rails.env.development? %>
   	<%= render 'layouts/footer'%>
-  
+    </div>
   </div>
 
 </body>
