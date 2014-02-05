@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:index,:edit, :update,:destroy,:following, :followers]
   before_action :correct_user,   only: [:edit, :update]
   #before_action :admin_user,     only: :destroy
-  before_action :micropost_build, only: [:index,:edit, :show, :update,:destroy,:following, :followers]
+  before_action :micropost_build, only: [:index,:edit, :show, 
+                :update,:destroy,:following, :followers]
   
   def new
   	@user =  User.new
@@ -11,8 +12,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
-
-
+    # followed_users = @user.followed_users
+    # followed_users.each do |user|
+    #   @microposts.push(user.microposts)
+    # end
   end
 
   def create
@@ -51,7 +54,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted."
-    redirect_to signin_path#users_url
+    redirect_to signin_path #users_url
   end
 
   def following
@@ -67,6 +70,8 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
+
+
 
   private
 

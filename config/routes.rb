@@ -1,6 +1,8 @@
 SampleApp::Application.routes.draw do
 
   get '/hashtags/:id/show', to: 'hashtags#show' , as: 'hashtag'
+  # get '/search', to:'users#search', as:'search_user'
+  # get '/qresults', to:'users#qresults', as:'query_user'
   get '/hashtags', to: 'hashtags#index'
   get "relationships/create"
   get "relationships/destroy"

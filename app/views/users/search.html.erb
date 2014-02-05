@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<%= form_tag query_user_path, :method => :get do %>
+			  <p>
+			    <%= text_field_tag :search, params[:search], placeholder: 'Search user'%>
+			    <%= submit_tag "Search", :name => nil %>
+			  </p>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<% if !@users.nil? %>
+		<ul class="users">
+		  <% @users.each do |user| %>
+		    <%= render user %>
+		  <% end %>
+		</ul>
+		<% else %>
+			
+				
+			
+		<% end %>
+	</div>
+</div>

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
 	def new
 	end
 
@@ -20,4 +21,13 @@ class SessionsController < ApplicationController
 		sign_out
     	redirect_to root_url
 	end
+
+	private
+
+    def micropost_build
+        # Just for the modal
+        if signed_in?
+          @micropost ||= current_user.microposts.build
+        end
+    end
 end

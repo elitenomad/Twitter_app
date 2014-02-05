@@ -21,7 +21,15 @@ class User < ActiveRecord::Base
   	def feed
     	# This is preliminary. See "Following users" for the full implementation.
     	Micropost.where("user_id = ?", id)
+      
   	end
+
+    def all_feed
+      # This is preliminary. See "Following users" for the full implementation.
+      #Micropost.where("user_id = ?", id)
+      user = User.find(id)
+      Micropost.where(user_id: user.followed_user_ids)
+    end
 
   	def following?(other_user)
     	relationships.find_by(followed_id: other_user.id)

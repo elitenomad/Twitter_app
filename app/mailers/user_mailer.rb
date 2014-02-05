@@ -9,6 +9,6 @@ class UserMailer < ActionMailer::Base
   def contact_mail(params)
   	@params = params
     @url  = 'http://wditwitter.herokuapp.com'
-    mail(to: params[:email], subject: 'Welcome to WDI Twitter App')
+    mail(to: params[:email], subject: 'Thanks for the feedback on WDI Twitter App')
   end
 end
