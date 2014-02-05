@@ -19,8 +19,15 @@ class StaticPagesController < ApplicationController
   end
 
   def sendemail
-    UserMailer.contact_mail(params).deliver
-    redirect_to root_path
+    begin
+      UserMailer.feedback_mail(params).deliver
+      UserMailer.contact_mail(params).deliver
+      redirect_to root_path
+    rescue
+      flash.now[:notice] = "Error in sending email. Please try again"
+      redirect_to root_path
+    end
+      
   end
 
    private
