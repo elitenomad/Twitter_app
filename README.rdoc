@@ -53,3 +53,7 @@ f) Users Hashtags:
 	   }
 
 	   d) Follow ActionMailer documentation to send an email from your app
+
+
+
+	i) Messaging by adding a mobile number to User model

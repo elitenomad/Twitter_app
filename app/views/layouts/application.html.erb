@@ -22,10 +22,12 @@
     <% if signed_in? %>
       <%= render 'layouts/tweetmod' %>
     <% end %>
-    <%= debug(params) if Rails.env.development? %>
-  	<%= render 'layouts/footer'%>
+  	
     </div>
   </div>
-
+  
+  <div class="container" >
+    <%= render 'layouts/footer'%>
+  </div>
 </body>
 </html>
