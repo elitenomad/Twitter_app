@@ -12,7 +12,7 @@ class HashtagsController < ApplicationController
       @hashtags = Hashtag.paginate(page: params[:page])
     else
       term = "%#{params[:name]}%"
-      @hashtags = Hashtag.where("name like ?", term).paginate(page: params[:page])
+      @hashtags = Hashtag.where("lower(name) like ?", term.downcase).paginate(page: params[:page])
     end
   end
 

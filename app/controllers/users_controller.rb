@@ -52,7 +52,7 @@ class UsersController < ApplicationController
       @users = User.paginate(page: params[:page])
     else
       term = "%#{params[:name]}%"
-      @users = User.where("name like ?", term).paginate(page: params[:page])
+      @users = User.where("lower(name) like ?", term.downcase).paginate(page: params[:page])
     end
   end
 
