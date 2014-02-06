@@ -48,7 +48,12 @@ class UsersController < ApplicationController
 
   def index
     #@users = User.all
-    @users = User.paginate(page: params[:page])
+    if params[:name].nil? || params[:name].empty?
+      @users = User.paginate(page: params[:page])
+    else
+      term = "%#{params[:name]}%"
+      @users = User.where("name like ?", term).paginate(page: params[:page])
+    end
   end
 
   def destroy

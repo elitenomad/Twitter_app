@@ -7,7 +7,13 @@ class HashtagsController < ApplicationController
   end
 
   def index
-  	@hashtags = Hashtag.all
+  	#@hashtags = Hashtag.all
+    if params[:name].nil? || params[:name].empty?
+      @hashtags = Hashtag.paginate(page: params[:page])
+    else
+      term = "%#{params[:name]}%"
+      @hashtags = Hashtag.where("name like ?", term).paginate(page: params[:page])
+    end
   end
 
   def search

@@ -25,8 +25,7 @@ class User < ActiveRecord::Base
   	end
 
     def all_feed
-      # This is preliminary. See "Following users" for the full implementation.
-      #Micropost.where("user_id = ?", id)
+      # Changed the twitter feed from self user to all the following users
       user = User.find(id)
       Micropost.where(user_id: user.followed_user_ids)
     end
@@ -50,7 +49,7 @@ class User < ActiveRecord::Base
 		end
 
 	validates :name, presence: true , length:{maximum: 50}
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i   # check the URL if mail regex is not working
 	validates :email, presence: true,format:{with:VALID_EMAIL_REGEX},
 					  uniqueness:{case_sensitive:false}
 

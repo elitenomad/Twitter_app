@@ -1,5 +1,27 @@
 <div class="container">
 	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+
+			<%= form_tag('/hashtags', method: :get) do %>
+	            <div class="input-group custom-search-form">
+	                <input type="text" name="name" id="name" class="form-control" placeholder="Search hashtag">
+	                  <span class="input-group-btn">
+		                <button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="single Hashtag" type="submit">
+		              	<span class="glyphicon glyphicon-search" ></span>
+		              </button>
+		              <button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="All Hashtags" type="submit">
+		              	<span class="glyphicon glyphicon-th-list"></span>
+		              </button>
+		            </span>
+	            </div><!-- /input-group -->
+            <% end %>
+        </div>
+	</div>
+</div>
+<p></p>
+
+<div class="container">
+	<div class="row">
 		<div class="col-md-6">
 			<div>
 				<% @hashtags.each do |tag| %>
