@@ -57,3 +57,51 @@ f) Users Hashtags:
 
 
 	i) Messaging by adding a mobile number to User model
+
+
+
+
+
+
+
+Home work for the weekend
+
+First - push your code up to github right now - and then post a link to it
+on ihpchat 
+I'd like you all to add two things to your projects.
+Neither of them is a rails thing, but could be added to any site - they are
+good for every website you build.
+
+
+1) add one of the feedback tabs you may have seen around.
+This will let users add suggestions for your site, feedback and bugs.
+
+I will be using this feedback tab to give you feedback on your site
+interface, so get it done soon.
+
+The most commonly used service is "Get Satisfaction"
+https://getsatisfaction.com/
+But I can't easily see where you get the free version anymore.
+
+Another is UserVoice:
+https://developer.uservoice.com/
+
+You can get the widget to put on your site here:
+https://www.uservoice.com/widget/
+ad paste the code into application layout
+
+
+
+2) next add google analytics.
+it's the most amazingly useful free thing you can get to keep track of who
+is using your site. How long they are staying on different pages - which
+pages they look at the most. Are they getting to your all-important "buy it
+now" page, and if so - by what route through your pages... etc
+
+You don't need to use any of the complicated gems (until you start getting
+heavily into SEO). To start with, just go to the analytics website here:
+http://www.google.com/analytics/
+create an account for your app, get the tracking code and paste it into your layout
+Hide full text
+
+Other than this, there is no set homework. use this time to consolidate everything you've learned so far. Remember, next week we start javascript - so you will be moving away from ruby, so take some time now to practice ruby and get it thoroughly bedded in.
