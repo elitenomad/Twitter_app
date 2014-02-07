@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
 	has_many :microposts, dependent: :destroy
+
+  # http://railscasts.com/episodes/47-two-many-to-many?view=comments
+  # http://guides.rubyonrails.org/association_basics.html 3.3.1 section
 	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 	has_many :followed_users, through: :relationships, source: :followed
+  
 	has_many :reverse_relationships, foreign_key: "followed_id",
                                    class_name:  "Relationship",
                                    dependent:   :destroy
@@ -10,6 +14,8 @@ class User < ActiveRecord::Base
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
 
+  # follow rail casthttp://railscasts.com/episodes/274-remember-me-reset-password
+  # for token functionality
 	def User.new_remember_token
     	SecureRandom.urlsafe_base64
   	end
@@ -49,13 +55,16 @@ class User < ActiveRecord::Base
 		end
 
 	validates :name, presence: true , length:{maximum: 50}
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i   # check the URL if mail regex is not working
+
+  # Pending regex is not working. Have to work on it.
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i   
 	validates :email, presence: true,format:{with:VALID_EMAIL_REGEX},
 					  uniqueness:{case_sensitive:false}
 
 	validates :password, length: { minimum: 6 }
-	#validates_presence_of :email
 
 	self.per_page = 25
+
+  #Episode 250 from rails casts
 	has_secure_password
 end

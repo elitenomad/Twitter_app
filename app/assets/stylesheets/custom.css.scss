@@ -11,6 +11,11 @@ html {
 body {
 	padding-top: 60px;
   font-family: 'Georgia', 'verdana';
+  background: 'white';
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 section {

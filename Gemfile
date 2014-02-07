@@ -9,14 +9,14 @@ gem 'faker', '1.1.2'
 gem 'will_paginate'
 gem 'pg'
 
-group :test do
-  gem 'rspec-rails', '2.13.1'
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara'
-  gem 'factory_girl_rails', '4.2.1'
-  gem 'cucumber-rails', '1.4.0', :require => false
-  gem 'database_cleaner', github: 'bmabey/database_cleaner'
-end
+# group :test do
+#   gem 'rspec-rails', '2.13.1'
+#   gem 'selenium-webdriver', '2.35.1'
+#   gem 'capybara'
+#   gem 'factory_girl_rails', '4.2.1'
+#   gem 'cucumber-rails', '1.4.0', :require => false
+#   gem 'database_cleaner', github: 'bmabey/database_cleaner'
+# end
 
 gem 'sass-rails', '4.0.1'
 gem 'uglifier', '2.1.1'
