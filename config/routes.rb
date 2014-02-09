@@ -25,6 +25,7 @@ SampleApp::Application.routes.draw do
   get "contact" => "static_pages#contact"
   get "sendemail" => "static_pages#sendemail"
   get "help" => "static_pages#help"
+  get "terms" => "static_pages#terms"
   get "signup" => "users#new"
   get "signin" => "sessions#new"
   delete "signout" => "sessions#destroy"

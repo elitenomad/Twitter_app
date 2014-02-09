@@ -18,6 +18,9 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def terms
+  end
+
   def sendemail
     begin
       UserMailer.feedback_mail(params).deliver
