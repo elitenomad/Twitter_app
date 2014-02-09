@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :micropost_build,  only: [:help,:about,:contact]
+  before_action :micropost_build,  only: [:help,:about,:contact,:terms]
 
   def home
     if signed_in?
